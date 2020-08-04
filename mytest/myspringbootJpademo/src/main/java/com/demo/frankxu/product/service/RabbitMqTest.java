@@ -1,10 +1,8 @@
-package com.demo.frankxu.product.service.impl;
+package com.demo.frankxu.product.service;
 
 
-import com.demo.frankxu.product.dao.PrdInfoDao;
 import com.rabbitmq.client.*;
 import org.junit.Test;
-import org.springframework.beans.factory.annotation.Autowired;
 
 import org.springframework.stereotype.Service;
 
@@ -19,13 +17,7 @@ import java.util.concurrent.atomic.AtomicInteger;
  */
 
 @Service
-
-public class PrdServiceImpl  {
-
-    @Autowired
-    PrdInfoDao prdInfoDao;
-
-    public class RabbitMqTest {
+public class RabbitMqTest {
 
         //消息队列名称
         private final static String QUEUE_NAME = "hello";
@@ -109,4 +101,3 @@ public class PrdServiceImpl  {
         }
     }
 
-}

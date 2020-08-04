@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:tns="http://ws.chinaunicom.cn/BaiduIntelligenceSer/" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:unibssBody="http://ws.chinaunicom.cn/BaiduIntelligenceSer/unibssBody" targetNamespace="http://ws.chinaunicom.cn/BaiduIntelligenceSer/" name="BaiduIntelligenceSer">  
+  <wsdl:documentation>百度智能服务</wsdl:documentation>  
+  <wsdl:types> 
+    <xsd:schema xmlns:ns1="http://ws.chinaunicom.cn/BaiduIntelligenceSer/unibssBody" targetNamespace="http://ws.chinaunicom.cn/BaiduIntelligenceSer/">  
+      <xsd:import schemaLocation="BaiduIntelligenceSchema.xsd" namespace="http://ws.chinaunicom.cn/BaiduIntelligenceSer/unibssBody"/> 
+    </xsd:schema> 
+  </wsdl:types>  
+  <wsdl:message name="baiduOrderRelationNotifyRequest"> 
+    <wsdl:documentation>无</wsdl:documentation>  
+    <wsdl:part name="parameters" element="unibssBody:BAIDU_ORDER_RELATION_NOTIFY_INPUT"/> 
+  </wsdl:message>  
+  <wsdl:message name="baiduOrderRelationNotifyResponse"> 
+    <wsdl:documentation>无</wsdl:documentation>  
+    <wsdl:part name="parameters" element="unibssBody:BAIDU_ORDER_RELATION_NOTIFY_OUTPUT"/> 
+  </wsdl:message>  
+  <wsdl:portType name="BaiduIntelligenceSer"> 
+    <wsdl:operation name="baiduOrderRelationNotify"> 
+      <wsdl:input message="tns:baiduOrderRelationNotifyRequest"/>  
+      <wsdl:output message="tns:baiduOrderRelationNotifyResponse"/> 
+    </wsdl:operation> 
+  </wsdl:portType>  
+  <wsdl:binding name="BaiduIntelligenceSerSOAP" type="tns:BaiduIntelligenceSer"> 
+    <soap:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/>  
+    <wsdl:operation name="baiduOrderRelationNotify"> 
+      <wsdl:documentation>百度音箱订购信息同步</wsdl:documentation>  
+      <soap:operation soapAction="http://ws.chinaunicom.cn/BaiduIntelligenceSer/baiduOrderRelationNotify/"/>  
+      <wsdl:input> 
+        <soap:body use="literal"/> 
+      </wsdl:input>  
+      <wsdl:output> 
+        <soap:body use="literal"/> 
+      </wsdl:output> 
+    </wsdl:operation> 
+  </wsdl:binding>  
+  <wsdl:service name="BaiduIntelligenceSer"> 
+    <wsdl:documentation>百度智能服务</wsdl:documentation>  
+    <wsdl:port name="BaiduIntelligenceSerSOAP" binding="tns:BaiduIntelligenceSerSOAP"> 
+      <soap:address location="http://ws.chinaunicom.cn/"/> 
+    </wsdl:port> 
+  </wsdl:service> 
+</wsdl:definitions>
+

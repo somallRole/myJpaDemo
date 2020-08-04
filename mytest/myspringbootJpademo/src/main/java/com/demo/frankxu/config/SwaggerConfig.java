@@ -45,13 +45,13 @@ import springfox.documentation.swagger2.annotations.EnableSwagger2;
         private ApiInfo apiInfo() {
             return new ApiInfoBuilder()
                     //页面标题
-                    .title("四川数安值科技有限公司接口调试系统")
+                    .title("许爽接口调试系统")
                     //创建人
-                    .contact("Digits8")
+                    .contact("FrankXU")
                     //版本号
                     .version("1.0")
                     //描述
-                    .description("微服务接口 API 文档")
+                    .description("接口 API 文档")
                     .build();
         }
     }

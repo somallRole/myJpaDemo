@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:head="http://ws.chinaunicom.cn/unibssHead" xmlns:attached="http://ws.chinaunicom.cn/unibssAttached" xmlns:body="http://ws.chinaunicom.cn/BaiduIntelligenceSer/unibssBody" xmlns:baiduOrderRelationNotifyReq="http://ws.chinaunicom.cn/BaiduIntelligenceSer/unibssBody/baiduOrderRelationNotifyReq" xmlns:baiduOrderRelationNotifyRsp="http://ws.chinaunicom.cn/BaiduIntelligenceSer/unibssBody/baiduOrderRelationNotifyRsp" targetNamespace="http://ws.chinaunicom.cn/BaiduIntelligenceSer/unibssBody" elementFormDefault="qualified" attributeFormDefault="unqualified">  
+  <xs:import namespace="http://ws.chinaunicom.cn/unibssHead" schemaLocation="unibssHead.xsd"/>  
+  <xs:import namespace="http://ws.chinaunicom.cn/unibssAttached" schemaLocation="unibssAttached.xsd"/>  
+  <xs:import namespace="http://ws.chinaunicom.cn/BaiduIntelligenceSer/unibssBody/baiduOrderRelationNotifyReq" schemaLocation="baiduOrderRelationNotifyReq.xsd"/>  
+  <xs:import namespace="http://ws.chinaunicom.cn/BaiduIntelligenceSer/unibssBody/baiduOrderRelationNotifyRsp" schemaLocation="baiduOrderRelationNotifyRsp.xsd"/>  
+  <xs:element name="BAIDU_ORDER_RELATION_NOTIFY_INPUT"> 
+    <xs:complexType> 
+      <xs:sequence> 
+        <xs:element ref="head:UNI_BSS_HEAD"/>  
+        <xs:element name="UNI_BSS_BODY"> 
+          <xs:complexType> 
+            <xs:sequence> 
+              <xs:element ref="baiduOrderRelationNotifyReq:BAIDU_ORDER_RELATION_NOTIFY_REQ"/> 
+            </xs:sequence> 
+          </xs:complexType> 
+        </xs:element>  
+        <xs:element ref="attached:UNI_BSS_ATTACHED"/> 
+      </xs:sequence> 
+    </xs:complexType> 
+  </xs:element>  
+  <xs:element name="BAIDU_ORDER_RELATION_NOTIFY_OUTPUT"> 
+    <xs:complexType> 
+      <xs:sequence> 
+        <xs:element ref="head:UNI_BSS_HEAD"/>  
+        <xs:element name="UNI_BSS_BODY"> 
+          <xs:complexType> 
+            <xs:sequence> 
+              <xs:element ref="baiduOrderRelationNotifyRsp:BAIDU_ORDER_RELATION_NOTIFY_RSP"/> 
+            </xs:sequence> 
+          </xs:complexType> 
+        </xs:element>  
+        <xs:element ref="attached:UNI_BSS_ATTACHED"/> 
+      </xs:sequence> 
+    </xs:complexType> 
+  </xs:element> 
+</xs:schema>
+

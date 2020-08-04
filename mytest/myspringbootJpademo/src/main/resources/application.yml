@@ -1,0 +1,43 @@
+server:
+  port: 8086
+  servlet:
+    context-path: /
+
+spring:
+  application:
+    name: mydemotest
+  datasource:
+    driver-class-name: com.mysql.jdbc.Driver
+    url: jdbc:mysql://mysql-server:3306/test?userUnicode=true&characterEncoding=utf8&characterSetResults=utf8&useSSL=false&autoReconnect=true
+    username: root
+    password: root
+  #配置 Jpa
+  jpa:
+    properties:
+      hibernate:
+        dialect: org.hibernate.dialect.MySQL5InnoDBDialect
+    hibernate:
+      ddl-auto: update
+      naming:
+        physical-strategy: org.hibernate.boot.model.naming.PhysicalNamingStrategyStandardImpl
+    open-in-view: true
+  #redis 配置
+  redis:
+    database: 0
+    host: 127.0.0.1
+    lettuce:
+      pool:
+        max-active: 8   #最大连接数据库连接数,设 0 为没有限制
+        max-idle: 8     #最大等待连接中的数量,设 0 为没有限制
+        max-wait: -1ms  #最大建立连接等待时间。如果超过此时间将接到异常。设为-1表示无限制。
+        min-idle: 0     #最小等待连接中的数量,设 0 为没有限制
+      shutdown-timeout: 100ms
+    password: 123456
+    port: 6379
+
+#devtools:
+#  livereload:
+#    enabled: true #是否支持livereload
+#    port: 35729
+#  restart:
+#    enabled: true #是否支持热部署

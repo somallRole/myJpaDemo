@@ -34,67 +34,13 @@ public class CustInfo {
     @Column
     @ApiModelProperty("订购状态")
     private String orderStatus; //用户订购状态
-    @ApiModelProperty("用户客户1：N关系")
+    /*@ApiModelProperty("用户客户1：N关系")
     @OneToMany(fetch=FetchType.EAGER,cascade=CascadeType.ALL)//一个客户可以订购多个产品
     @JoinTable(name = "CustInfoCustUsersRel", joinColumns = {@JoinColumn(name = "custuer_id")},
-    inverseJoinColumns={@JoinColumn(name = "custInfo_id")})
+    inverseJoinColumns={@JoinColumn(name = "custInfo_id")})*/
 
 
-    public long getId() {
-        return id;
-    }
 
-    public void setId(long id) {
-        this.id = id;
-    }
-
-    public String getCustNo() {
-        return custNo;
-    }
-
-    public void setCustNo(String custNo) {
-        this.custNo = custNo;
-    }
-
-    public String getCustName() {
-        return custName;
-    }
-
-    public void setCustName(String custName) {
-        this.custName = custName;
-    }
-
-    public String getProvinceCode() {
-        return provinceCode;
-    }
-
-    public void setProvinceCode(String provinceCode) {
-        this.provinceCode = provinceCode;
-    }
-
-    public String getEparchyCode() {
-        return eparchyCode;
-    }
-
-    public void setEparchyCode(String eparchyCode) {
-        this.eparchyCode = eparchyCode;
-    }
-
-    public String getCountyCode() {
-        return countyCode;
-    }
-
-    public void setCountyCode(String countyCode) {
-        this.countyCode = countyCode;
-    }
-
-    public String getOrderStatus() {
-        return orderStatus;
-    }
-
-    public void setOrderStatus(String orderStatus) {
-        this.orderStatus = orderStatus;
-    }
 
 
     @Override
