@@ -188,14 +188,14 @@ public class FileUtil {
      *
      * @param f
      */
-    public static void splitFile(File f) throws IOException {​
+    public static void splitFile(File f) throws IOException{
         // 切分为100K大小的文件
-        long fileLength = 1024 * 100; ​
+        long fileLength = 1024 * 100;
         RandomAccessFile src = new RandomAccessFile(f, "r");
         int numberOfPieces = (int) (src.length() / fileLength) + 1;
         int len = -1;
         byte[] b = new byte[1024];
-        for (int i = 0; i < numberOfPieces; i++) {​
+        for (int i = 0; i < numberOfPieces; i++) {
             String name = "src/test/resources/file/" + f.getName() + "." + (i + 1);
             File file = new File(name);
             file.createNewFile();
