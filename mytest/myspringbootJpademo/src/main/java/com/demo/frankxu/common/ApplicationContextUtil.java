@@ -1,4 +1,4 @@
-package com.frankxu.codetest.common;
+package com.demo.frankxu.common;
 
 import org.springframework.beans.BeansException;
 import org.springframework.context.ApplicationContext;
